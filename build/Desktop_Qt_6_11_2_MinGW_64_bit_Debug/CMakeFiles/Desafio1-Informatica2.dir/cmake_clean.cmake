@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Desafio1-Informatica2.dir/bits.cpp.obj"
+  "CMakeFiles/Desafio1-Informatica2.dir/bits.cpp.obj.d"
   "CMakeFiles/Desafio1-Informatica2.dir/main.cpp.obj"
   "CMakeFiles/Desafio1-Informatica2.dir/main.cpp.obj.d"
   "Desafio1-Informatica2.exe"

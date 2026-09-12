@@ -173,6 +173,30 @@ Desafio1-Informatica2/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Desafio1-Informatica2.dir\build.make CMakeFiles/Desafio1-Informatica2.dir/build
 .PHONY : Desafio1-Informatica2/fast
 
+bits.obj: bits.cpp.obj
+.PHONY : bits.obj
+
+# target to build an object file
+bits.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Desafio1-Informatica2.dir\build.make CMakeFiles/Desafio1-Informatica2.dir/bits.cpp.obj
+.PHONY : bits.cpp.obj
+
+bits.i: bits.cpp.i
+.PHONY : bits.i
+
+# target to preprocess a source file
+bits.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Desafio1-Informatica2.dir\build.make CMakeFiles/Desafio1-Informatica2.dir/bits.cpp.i
+.PHONY : bits.cpp.i
+
+bits.s: bits.cpp.s
+.PHONY : bits.s
+
+# target to generate assembly for a file
+bits.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Desafio1-Informatica2.dir\build.make CMakeFiles/Desafio1-Informatica2.dir/bits.cpp.s
+.PHONY : bits.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -210,6 +234,9 @@ help:
 	@echo ... list_install_components
 	@echo ... rebuild_cache
 	@echo ... Desafio1-Informatica2
+	@echo ... bits.obj
+	@echo ... bits.i
+	@echo ... bits.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

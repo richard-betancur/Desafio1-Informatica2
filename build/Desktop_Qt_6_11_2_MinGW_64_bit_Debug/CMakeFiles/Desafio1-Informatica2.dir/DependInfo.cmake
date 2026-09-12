@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/bits.cpp" "CMakeFiles/Desafio1-Informatica2.dir/bits.cpp.obj" "gcc" "CMakeFiles/Desafio1-Informatica2.dir/bits.cpp.obj.d"
   "C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/main.cpp" "CMakeFiles/Desafio1-Informatica2.dir/main.cpp.obj" "gcc" "CMakeFiles/Desafio1-Informatica2.dir/main.cpp.obj.d"
   )
 

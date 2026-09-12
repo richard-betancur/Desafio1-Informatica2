@@ -1,0 +1,8 @@
+#ifndef BITS_H   /// se usa para que BITS_H no se incluya varias veces accidentalmente 
+#define BITS_H   /// se usa para que BITS_H no se incluya varias veces accidentalmente
+
+
+///Funcion ob
+int obtenerFicha(unsigned char* datos, int bitInicial);
+
+#endif

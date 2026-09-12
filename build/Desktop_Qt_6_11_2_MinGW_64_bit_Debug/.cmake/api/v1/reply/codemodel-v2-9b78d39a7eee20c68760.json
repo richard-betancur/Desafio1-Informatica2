@@ -1,0 +1,61 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-671076c4af7e2770f3b0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Desafio1-Informatica2",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Desafio1-Informatica2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Desafio1-Informatica2-Debug-e4cd70eeb4db92324982.json",
+					"name" : "Desafio1-Informatica2",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug",
+		"source" : "C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
