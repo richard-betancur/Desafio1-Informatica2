@@ -221,6 +221,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Desafio1-Informatica2.dir\build.make CMakeFiles/Desafio1-Informatica2.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+tablero.obj: tablero.cpp.obj
+.PHONY : tablero.obj
+
+# target to build an object file
+tablero.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Desafio1-Informatica2.dir\build.make CMakeFiles/Desafio1-Informatica2.dir/tablero.cpp.obj
+.PHONY : tablero.cpp.obj
+
+tablero.i: tablero.cpp.i
+.PHONY : tablero.i
+
+# target to preprocess a source file
+tablero.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Desafio1-Informatica2.dir\build.make CMakeFiles/Desafio1-Informatica2.dir/tablero.cpp.i
+.PHONY : tablero.cpp.i
+
+tablero.s: tablero.cpp.s
+.PHONY : tablero.s
+
+# target to generate assembly for a file
+tablero.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Desafio1-Informatica2.dir\build.make CMakeFiles/Desafio1-Informatica2.dir/tablero.cpp.s
+.PHONY : tablero.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -240,6 +264,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... tablero.obj
+	@echo ... tablero.i
+	@echo ... tablero.s
 .PHONY : help
 
 
