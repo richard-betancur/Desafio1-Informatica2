@@ -18,3 +18,26 @@ int obtenerFicha(unsigned char* datos, int bitInicial){
         return ficha;
     }
 }
+
+void ponerFicha(unsigned char* datos, int bitInicial, int ficha){
+    int byte = bitInicial / 8;
+    int offset = bitInicial % 8;
+
+    if(offset <= 5){
+        datos[byte] &= ~(7 << offset);
+        datos[byte] |= (ficha << offset);
+    }
+    else if (offset == 6){
+        datos[byte] &= ~(3 << 6);
+        datos[byte + 1] &= ~1;
+
+        datos[byte] |= (ficha & 3) << 6;
+        datos[byte +1] |= (ficha >> 2);
+    }else{
+        datos[byte] &= ~(1 << 7);
+        datos[byte + 1] &= ~3;
+
+        datos[byte] |= (ficha & 1) << 7;
+        datos[byte + 1] |= (ficha >> 1);
+    }
+}

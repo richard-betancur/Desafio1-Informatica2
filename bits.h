@@ -4,6 +4,7 @@
 
 ///Declaramos una Funcion obtenerFicha que resivira datos y bitInicial y devolvera un entero
 int obtenerFicha(unsigned char* datos, int bitInicial); ///unsigned char* es un puntero a nuestra memoria dinamica
+void ponerFicha(unsigned char* datos, int bitInicial, int ficha);
 
 #endif
 
