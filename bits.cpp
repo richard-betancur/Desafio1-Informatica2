@@ -68,6 +68,14 @@ bool estaMarcada(unsigned char* marcas, int indice)
     return (marcas[byte] & (1 << bit)) != 0;
 }
 
+void limpiarMarcas(unsigned char* marcas, int bytesMarcas)
+{
+    for (int i = 0; i < bytesMarcas; i++)
+    {
+        marcas[i] = 0;
+    }
+}
+
 
 
 

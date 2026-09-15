@@ -9,6 +9,8 @@ void ponerFicha(unsigned char* datos, int bitInicial, int ficha);
 void marcarPosicion(unsigned char* marcas, int indice);
 bool estaMarcada(unsigned char* marcas, int indice);
 
+void limpiarMarcas(unsigned char* marcas, int bytesMarcas);
+
 #endif
 
 /// * es una direccion que apunta a una zona de memoria donde tenemos bytes

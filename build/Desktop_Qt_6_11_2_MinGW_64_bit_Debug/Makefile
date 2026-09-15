@@ -221,6 +221,30 @@ combinaciones.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Desafio1-Informatica2.dir\build.make CMakeFiles/Desafio1-Informatica2.dir/combinaciones.cpp.s
 .PHONY : combinaciones.cpp.s
 
+juego.obj: juego.cpp.obj
+.PHONY : juego.obj
+
+# target to build an object file
+juego.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Desafio1-Informatica2.dir\build.make CMakeFiles/Desafio1-Informatica2.dir/juego.cpp.obj
+.PHONY : juego.cpp.obj
+
+juego.i: juego.cpp.i
+.PHONY : juego.i
+
+# target to preprocess a source file
+juego.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Desafio1-Informatica2.dir\build.make CMakeFiles/Desafio1-Informatica2.dir/juego.cpp.i
+.PHONY : juego.cpp.i
+
+juego.s: juego.cpp.s
+.PHONY : juego.s
+
+# target to generate assembly for a file
+juego.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Desafio1-Informatica2.dir\build.make CMakeFiles/Desafio1-Informatica2.dir/juego.cpp.s
+.PHONY : juego.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -288,6 +312,9 @@ help:
 	@echo ... combinaciones.obj
 	@echo ... combinaciones.i
 	@echo ... combinaciones.s
+	@echo ... juego.obj
+	@echo ... juego.i
+	@echo ... juego.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

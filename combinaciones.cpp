@@ -1,9 +1,11 @@
 #include "combinaciones.h"
 #include "bits.h"
 
-void detectarCombinaciones(unsigned char* datos, int filas, int columnas, unsigned char* marcas)
+int detectarCombinaciones(unsigned char* datos, int filas, int columnas, unsigned char* marcas)
 {
-    //COMBINACIONES HORIZONTALES
+    int cantidadMarcadas = 0;
+
+    // COMBINACIONES HORIZONTALES
     for (int fila = 0; fila < filas; fila++){
         for (int columna = 0; columna < columnas - 2; columna++){
             int indice1 = fila * columnas + columna;
@@ -14,16 +16,27 @@ void detectarCombinaciones(unsigned char* datos, int filas, int columnas, unsign
             int ficha2 = obtenerFicha(datos, indice2 * 3);
             int ficha3 = obtenerFicha(datos, indice3 * 3);
 
-            if (ficha1 == ficha2 && ficha2 == ficha3){
-                marcarPosicion(marcas, indice1);
-                marcarPosicion(marcas, indice2);
-                marcarPosicion(marcas, indice3);
+            if (ficha1 != 6 && ficha1 == ficha2 && ficha2 == ficha3){
+                if (!estaMarcada(marcas, indice1)){
+                    cantidadMarcadas++;
+                    marcarPosicion(marcas, indice1);
+                }
+
+                if (!estaMarcada(marcas, indice2)){
+                    cantidadMarcadas++;
+                    marcarPosicion(marcas, indice2);
+                }
+
+                if (!estaMarcada(marcas, indice3)){
+                    cantidadMarcadas++;
+                    marcarPosicion(marcas, indice3);
+                }
             }
         }
     }
 
 
-    //COMBINACIONES VERTICALES
+    // COMBINACIONES VERTICALES
     for (int columna = 0; columna < columnas; columna++){
         for (int fila = 0; fila < filas - 2; fila++){
             int indice1 = fila * columnas + columna;
@@ -34,21 +47,32 @@ void detectarCombinaciones(unsigned char* datos, int filas, int columnas, unsign
             int ficha2 = obtenerFicha(datos, indice2 * 3);
             int ficha3 = obtenerFicha(datos, indice3 * 3);
 
-            if (ficha1 == ficha2 && ficha2 == ficha3){
-                marcarPosicion(marcas, indice1);
-                marcarPosicion(marcas, indice2);
-                marcarPosicion(marcas, indice3);
+            if (ficha1 != 6 && ficha1 == ficha2 && ficha2 == ficha3){
+                if (!estaMarcada(marcas, indice1)){
+                    cantidadMarcadas++;
+                    marcarPosicion(marcas, indice1);
+                }
+
+                if (!estaMarcada(marcas, indice2)){
+                    cantidadMarcadas++;
+                    marcarPosicion(marcas, indice2);
+                }
+
+                if (!estaMarcada(marcas, indice3)){
+                    cantidadMarcadas++;
+                    marcarPosicion(marcas, indice3);
+                }
             }
         }
     }
+
+    return cantidadMarcadas;
 }
 
-void eliminarMarcadas(unsigned char* datos, int filas, int columnas, unsigned char* marcas)
-{
-    for (int i = 0; i < filas * columnas; i++)
-    {
-        if (estaMarcada(marcas, i))
-        {
+
+void eliminarMarcadas(unsigned char* datos, int filas, int columnas, unsigned char* marcas){
+    for (int i = 0; i < filas * columnas; i++){
+        if (estaMarcada(marcas, i)){
             ponerFicha(datos, i * 3, 6);
         }
     }

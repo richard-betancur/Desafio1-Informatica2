@@ -9,4 +9,7 @@ void eliminarFicha(unsigned char* datos, int filas, int columnas, int fila, int 
 void aplicarGravedad(unsigned char* datos, int filas, int columnas);
 void rellenarVacios(unsigned char* datos, int filas, int columnas);
 
+void agregarFila(unsigned char*& datos, int& filas, int columnas, int posicion);
+void eliminarFila(unsigned char*& datos, int& filas, int columnas, int posicion);
+
 #endif

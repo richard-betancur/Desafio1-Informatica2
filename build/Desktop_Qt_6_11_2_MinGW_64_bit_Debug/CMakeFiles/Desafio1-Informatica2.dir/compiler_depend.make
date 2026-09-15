@@ -8,6 +8,12 @@ CMakeFiles/Desafio1-Informatica2.dir/combinaciones.cpp.obj: C:/Users/user/OneDri
   C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/bits.h \
   C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/combinaciones.h
 
+CMakeFiles/Desafio1-Informatica2.dir/juego.cpp.obj: C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/juego.cpp \
+  C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/bits.h \
+  C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/combinaciones.h \
+  C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/juego.h \
+  C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/tablero.h
+
 CMakeFiles/Desafio1-Informatica2.dir/main.cpp.obj: C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/main.cpp \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward/binders.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bit \
@@ -151,8 +157,6 @@ CMakeFiles/Desafio1-Informatica2.dir/main.cpp.obj: C:/Users/user/OneDrive/Docume
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h \
-  C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/bits.h \
-  C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/combinaciones.h \
   C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/tablero.h
 
 CMakeFiles/Desafio1-Informatica2.dir/tablero.cpp.obj: C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/tablero.cpp \
@@ -306,12 +310,6 @@ C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/combinaciones.cpp:
 
 C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/bits.cpp:
 
-C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bit:
-
-C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/invoke.h:
-
-C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward/binders.h:
-
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/utility.h:
 
 C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/pthread_compat.h:
@@ -323,6 +321,20 @@ C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/main.cpp:
 C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/combinaciones.h:
 
 C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/bits.h:
+
+C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/juego.cpp:
+
+C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/juego.h:
+
+C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets.h:
+
+C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/tablero.h:
+
+C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward/binders.h:
+
+C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bit:
+
+C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/invoke.h:
 
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/concept_check.h:
 
@@ -347,8 +359,6 @@ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/memo
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_string.tcc:
 
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/char_traits.h:
-
-C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cerrno:
 
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/exception:
 
@@ -400,8 +410,6 @@ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/pred
 
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_classes.h:
 
-C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets.h:
-
 C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/pthread.h:
 
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets.tcc:
@@ -434,8 +442,6 @@ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_
 
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_pair.h:
 
-C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/clocale:
-
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/streambuf_iterator.h:
 
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/string_view.tcc:
@@ -443,6 +449,10 @@ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stri
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stringfwd.h:
 
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cctype:
+
+C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cerrno:
+
+C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/clocale:
 
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/debug/assertions.h:
 
@@ -595,7 +605,5 @@ C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h:
 C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h:
 
 C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h:
-
-C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/tablero.h:
 
 C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/tablero.cpp:

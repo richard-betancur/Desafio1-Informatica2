@@ -13,6 +13,8 @@ add_executable(Desafio1-Informatica2
     tablero.h
     combinaciones.cpp
     combinaciones.h
+    juego.h
+    juego.cpp
 )
 
 include(GNUInstallDirs)
