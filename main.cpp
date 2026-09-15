@@ -1,22 +1,27 @@
 #include <iostream>
 #include "bits.h"
+#include "tablero.h"
 
 using namespace std;
 
 int main()
 {
-    unsigned char datos[3] = {0, 0, 0};
+    unsigned char* datos = nullptr;
 
-    ponerFicha(datos, 0, 5);
-    ponerFicha(datos, 3, 2);
-    ponerFicha(datos, 6, 7);
-    ponerFicha(datos, 9, 4);
+    int filas;
+    int columnas;
 
-    cout << "Ficha en bit 0: " << obtenerFicha(datos, 0) << endl;
-    cout << "Ficha en bit 3: " << obtenerFicha(datos, 3) << endl;
-    cout << "Ficha en bit 6: " << obtenerFicha(datos, 6) << endl;
-    cout << "Ficha en bit 9: " << obtenerFicha(datos, 9) << endl;
+    cout << "Por favor ingrese el numero de filas: ";
+    cin >> filas;
 
+    cout << "Por favor ingrese el numero de columnas: ";
+    cin >> columnas;
+
+    crearTablero(datos, filas, columnas);
+
+    mostrarTablero(datos, filas, columnas);
+
+    destruirTablero(datos);
 
     return 0;
 }

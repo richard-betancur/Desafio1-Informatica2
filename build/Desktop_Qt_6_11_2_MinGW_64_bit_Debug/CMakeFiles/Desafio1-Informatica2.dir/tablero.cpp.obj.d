@@ -1,5 +1,7 @@
-CMakeFiles/Desafio1-Informatica2.dir/main.cpp.obj: \
- C:\Users\user\OneDrive\Documentos\Desafio1-Informatica2\main.cpp \
+CMakeFiles/Desafio1-Informatica2.dir/tablero.cpp.obj: \
+ C:\Users\user\OneDrive\Documentos\Desafio1-Informatica2\tablero.cpp \
+ C:\Users\user\OneDrive\Documentos\Desafio1-Informatica2\tablero.h \
+ C:\Users\user\OneDrive\Documentos\Desafio1-Informatica2\bits.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -141,6 +143,4 @@ CMakeFiles/Desafio1-Informatica2.dir/main.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_ios.tcc \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream.tcc \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
- C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
- C:\Users\user\OneDrive\Documentos\Desafio1-Informatica2\bits.h \
- C:\Users\user\OneDrive\Documentos\Desafio1-Informatica2\tablero.h
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc
