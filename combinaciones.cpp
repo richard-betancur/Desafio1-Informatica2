@@ -1,67 +1,125 @@
 #include "combinaciones.h"
 #include "bits.h"
 
-int detectarCombinaciones(unsigned char* datos, int filas, int columnas, unsigned char* marcas)
+int detectarCombinaciones(unsigned char* datos, int filas, int columnas,
+                          unsigned char* marcas, int& cantidadCombinaciones)
 {
     int cantidadMarcadas = 0;
+    cantidadCombinaciones = 0;
 
     // COMBINACIONES HORIZONTALES
-    for (int fila = 0; fila < filas; fila++){
-        for (int columna = 0; columna < columnas - 2; columna++){
-            int indice1 = fila * columnas + columna;
-            int indice2 = fila * columnas + columna + 1;
-            int indice3 = fila * columnas + columna + 2;
 
-            int ficha1 = obtenerFicha(datos, indice1 * 3);
-            int ficha2 = obtenerFicha(datos, indice2 * 3);
-            int ficha3 = obtenerFicha(datos, indice3 * 3);
+    for (int fila = 0; fila < filas; fila++)
+    {
+        int columna = 0;
 
-            if (ficha1 != 6 && ficha1 == ficha2 && ficha2 == ficha3){
-                if (!estaMarcada(marcas, indice1)){
-                    cantidadMarcadas++;
-                    marcarPosicion(marcas, indice1);
+        while (columna < columnas)
+        {
+            int indice = fila * columnas + columna;
+            int ficha = obtenerFicha(datos, indice * 3);
+
+            if (ficha == 6)
+            {
+                columna++;
+            }
+            else
+            {
+                int inicio = columna;
+                int fin = columna;
+
+                while (fin + 1 < columnas)
+                {
+                    int indiceSiguiente = fila * columnas + fin + 1;
+                    int fichaSiguiente = obtenerFicha(datos, indiceSiguiente * 3);
+
+                    if (fichaSiguiente == ficha)
+                    {
+                        fin++;
+                    }
+                    else
+                    {
+                        break;
+                    }
                 }
 
-                if (!estaMarcada(marcas, indice2)){
-                    cantidadMarcadas++;
-                    marcarPosicion(marcas, indice2);
+                int cantidad = fin - inicio + 1;
+
+                if (cantidad >= 3)
+                {
+                    cantidadCombinaciones++;
+
+                    for (int c = inicio; c <= fin; c++)
+                    {
+                        int indiceMarcado = fila * columnas + c;
+
+                        if (!estaMarcada(marcas, indiceMarcado))
+                        {
+                            cantidadMarcadas++;
+                            marcarPosicion(marcas, indiceMarcado);
+                        }
+                    }
                 }
 
-                if (!estaMarcada(marcas, indice3)){
-                    cantidadMarcadas++;
-                    marcarPosicion(marcas, indice3);
-                }
+                columna = fin + 1;
             }
         }
     }
 
 
     // COMBINACIONES VERTICALES
-    for (int columna = 0; columna < columnas; columna++){
-        for (int fila = 0; fila < filas - 2; fila++){
-            int indice1 = fila * columnas + columna;
-            int indice2 = (fila + 1) * columnas + columna;
-            int indice3 = (fila + 2) * columnas + columna;
 
-            int ficha1 = obtenerFicha(datos, indice1 * 3);
-            int ficha2 = obtenerFicha(datos, indice2 * 3);
-            int ficha3 = obtenerFicha(datos, indice3 * 3);
+    for (int columna = 0; columna < columnas; columna++)
+    {
+        int fila = 0;
 
-            if (ficha1 != 6 && ficha1 == ficha2 && ficha2 == ficha3){
-                if (!estaMarcada(marcas, indice1)){
-                    cantidadMarcadas++;
-                    marcarPosicion(marcas, indice1);
+        while (fila < filas)
+        {
+            int indice = fila * columnas + columna;
+            int ficha = obtenerFicha(datos, indice * 3);
+
+            if (ficha == 6)
+            {
+                fila++;
+            }
+            else
+            {
+                int inicio = fila;
+                int fin = fila;
+
+                while (fin + 1 < filas)
+                {
+                    int indiceSiguiente = (fin + 1) * columnas + columna;
+                    int fichaSiguiente = obtenerFicha(datos, indiceSiguiente * 3);
+
+                    if (fichaSiguiente == ficha)
+                    {
+                        fin++;
+                    }
+                    else
+                    {
+                        break;
+                    }
                 }
 
-                if (!estaMarcada(marcas, indice2)){
-                    cantidadMarcadas++;
-                    marcarPosicion(marcas, indice2);
+                int cantidad = fin - inicio + 1;
+
+                if (cantidad >= 3)
+                {
+                    cantidadCombinaciones++;
+
+                    for (int f = inicio; f <= fin; f++)
+                    {
+                        int indiceMarcado = f * columnas + columna;
+
+                        if (!estaMarcada(marcas, indiceMarcado))
+                        {
+                            cantidadMarcadas++;
+                            marcarPosicion(marcas, indiceMarcado);
+                        }
+                    }
                 }
 
-                if (!estaMarcada(marcas, indice3)){
-                    cantidadMarcadas++;
-                    marcarPosicion(marcas, indice3);
-                }
+                fila = fin + 1;
             }
         }
     }
@@ -70,9 +128,13 @@ int detectarCombinaciones(unsigned char* datos, int filas, int columnas, unsigne
 }
 
 
-void eliminarMarcadas(unsigned char* datos, int filas, int columnas, unsigned char* marcas){
-    for (int i = 0; i < filas * columnas; i++){
-        if (estaMarcada(marcas, i)){
+void eliminarMarcadas(unsigned char* datos, int filas, int columnas,
+                      unsigned char* marcas)
+{
+    for (int i = 0; i < filas * columnas; i++)
+    {
+        if (estaMarcada(marcas, i))
+        {
             ponerFicha(datos, i * 3, 6);
         }
     }

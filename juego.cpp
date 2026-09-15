@@ -3,13 +3,22 @@
 #include "tablero.h"
 #include "bits.h"
 
-int procesarCascadas(unsigned char* datos, int filas, int columnas, unsigned char* marcas, int bytesMarcas)
+int procesarCascadas(unsigned char* datos, int filas, int columnas,
+                     unsigned char* marcas, int bytesMarcas)
 {
     int cantidadCascadas = 0;
+    int cantidadCombinaciones = 0;
 
-    int cantidad = detectarCombinaciones(datos, filas, columnas, marcas);
+    int cantidad = detectarCombinaciones(
+        datos,
+        filas,
+        columnas,
+        marcas,
+        cantidadCombinaciones
+        );
 
-    while (cantidad > 0){
+    while (cantidad > 0)
+    {
         cantidadCascadas++;
 
         eliminarMarcadas(datos, filas, columnas, marcas);
@@ -20,7 +29,13 @@ int procesarCascadas(unsigned char* datos, int filas, int columnas, unsigned cha
 
         limpiarMarcas(marcas, bytesMarcas);
 
-        cantidad = detectarCombinaciones(datos, filas, columnas, marcas);
+        cantidad = detectarCombinaciones(
+            datos,
+            filas,
+            columnas,
+            marcas,
+            cantidadCombinaciones
+            );
     }
 
     return cantidadCascadas;

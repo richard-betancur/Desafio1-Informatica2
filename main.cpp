@@ -7,20 +7,27 @@ int main()
 {
     unsigned char* datos = nullptr;
 
-    int filas = 4;
-    int columnas = 3;
+    int filas = 3;
+    int columnas = 4;
+    int capacidadBytes = 0;
 
-    crearTablero(datos, filas, columnas);
+    crearTablero(datos, filas, columnas, capacidadBytes);
 
-    cout << "Tablero antes de eliminar la fila:" << endl;
+    cout << "Antes:" << endl;
     mostrarTablero(datos, filas, columnas);
 
     cout << endl;
 
-    eliminarFila(datos, filas, columnas, 1);
+    eliminarColumna(datos, filas, columnas, 1, capacidadBytes);
 
-    cout << "Tablero despues de eliminar la fila 1:" << endl;
+    cout << "Despues de eliminar columna 1:" << endl;
     mostrarTablero(datos, filas, columnas);
+
+    cout << endl;
+
+    cout << "Filas: " << filas << endl;
+    cout << "Columnas: " << columnas << endl;
+    cout << "Capacidad: " << capacidadBytes << " bytes" << endl;
 
     destruirTablero(datos);
 

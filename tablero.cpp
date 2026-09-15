@@ -4,9 +4,11 @@
 
 using namespace std;
 
-void crearTablero(unsigned char*& datos, int filas, int columnas){
+void crearTablero(unsigned char*& datos, int filas, int columnas, int& capacidadBytes){
     int bitsNecesarios = filas * columnas * 3;
     int bytesNecesarios = (bitsNecesarios + 7) / 8;
+
+    capacidadBytes = bytesNecesarios;
 
     datos = new unsigned char[bytesNecesarios];
 
@@ -22,12 +24,9 @@ void crearTablero(unsigned char*& datos, int filas, int columnas){
     }
 }
 
-void mostrarTablero(unsigned char* datos, int filas, int columnas)
-{
-    for (int fila = 0; fila < filas; fila++)
-    {
-        for (int columna = 0; columna < columnas; columna++)
-        {
+void mostrarTablero(unsigned char* datos, int filas, int columnas){
+    for (int fila = 0; fila < filas; fila++){
+        for (int columna = 0; columna < columnas; columna++){
             int indice = fila * columnas + columna;
             int bitInicial = indice * 3;
 
@@ -60,16 +59,14 @@ void mostrarTablero(unsigned char* datos, int filas, int columnas)
     }
 }
 
-int obtenerFichaTablero(unsigned char* datos, int filas, int columnas, int fila, int columna)
-{
+int obtenerFichaTablero(unsigned char* datos, int filas, int columnas, int fila, int columna){
     int indice = fila * columnas + columna;
     int bitInicial = indice * 3;
 
     return obtenerFicha(datos, bitInicial);
 }
 
-void eliminarFicha(unsigned char* datos, int filas, int columnas, int fila, int columna)
-{
+void eliminarFicha(unsigned char* datos, int filas, int columnas, int fila, int columna){
     int indice = fila * columnas + columna;
     int bitInicial = indice * 3;
 
@@ -103,14 +100,11 @@ void aplicarGravedad(unsigned char* datos, int filas, int columnas){
     }
 }
 
-void rellenarVacios(unsigned char* datos, int filas, int columnas)
-{
-    for (int i = 0; i < filas * columnas; i++)
-    {
+void rellenarVacios(unsigned char* datos, int filas, int columnas){
+    for (int i = 0; i < filas * columnas; i++){
         int ficha = obtenerFicha(datos, i * 3);
 
-        if (ficha == 6)
-        {
+        if (ficha == 6){
             int nuevaFicha = i % 6;
 
             ponerFicha(datos, i * 3, nuevaFicha);
@@ -118,8 +112,7 @@ void rellenarVacios(unsigned char* datos, int filas, int columnas)
     }
 }
 
-void agregarFila(unsigned char*& datos, int& filas, int columnas, int posicion)
-{
+void agregarFila(unsigned char*& datos, int& filas, int columnas, int posicion, int& capacidadBytes){
     int nuevasFilas = filas + 1;
 
     int bitsNecesarios = nuevasFilas * columnas * 3;
@@ -127,42 +120,31 @@ void agregarFila(unsigned char*& datos, int& filas, int columnas, int posicion)
 
     unsigned char* nuevosDatos = new unsigned char[bytesNecesarios];
 
-    for (int i = 0; i < bytesNecesarios; i++)
-    {
+    for (int i = 0; i < bytesNecesarios; i++){
         nuevosDatos[i] = 0;
     }
 
-    for (int fila = 0; fila < nuevasFilas; fila++)
-    {
-        if (fila == posicion)
-        {
-            // Esta es la fila nueva
-            for (int columna = 0; columna < columnas; columna++)
-            {
+    for (int fila = 0; fila < nuevasFilas; fila++){
+        if (fila == posicion){
+            for (int columna = 0; columna < columnas; columna++){
                 int indiceNuevo = fila * columnas + columna;
-
                 int fichaNueva = indiceNuevo % 6;
 
                 ponerFicha(nuevosDatos, indiceNuevo * 3, fichaNueva);
             }
         }
-        else
-        {
+        else{
             int filaVieja;
 
-            if (fila < posicion)
-            {
+            if (fila < posicion){
                 filaVieja = fila;
             }
-            else
-            {
+            else{
                 filaVieja = fila - 1;
             }
 
-            for (int columna = 0; columna < columnas; columna++)
-            {
+            for (int columna = 0; columna < columnas; columna++){
                 int indiceViejo = filaVieja * columnas + columna;
-
                 int ficha = obtenerFicha(datos, indiceViejo * 3);
 
                 int indiceNuevo = fila * columnas + columna;
@@ -177,31 +159,40 @@ void agregarFila(unsigned char*& datos, int& filas, int columnas, int posicion)
     datos = nuevosDatos;
 
     filas = nuevasFilas;
+
+    capacidadBytes = bytesNecesarios;
 }
 
-void eliminarFila(unsigned char*& datos, int& filas, int columnas, int posicion)
-{
+void eliminarFila(unsigned char*& datos, int& filas, int columnas, int posicion, int& capacidadBytes){
     int nuevasFilas = filas - 1;
 
     int bitsNecesarios = nuevasFilas * columnas * 3;
     int bytesNecesarios = (bitsNecesarios + 7) / 8;
 
-    unsigned char* nuevosDatos = new unsigned char[bytesNecesarios];
+    double ocupacion = (double)bytesNecesarios / capacidadBytes;
 
-    for (int i = 0; i < bytesNecesarios; i++)
-    {
+    int bytesReservados;
+
+    if (ocupacion < 0.65){
+        bytesReservados = bytesNecesarios;
+    }
+    else{
+        bytesReservados = capacidadBytes;
+    }
+
+    unsigned char* nuevosDatos = new unsigned char[bytesReservados];
+
+    for (int i = 0; i < bytesReservados; i++){
         nuevosDatos[i] = 0;
     }
 
     int filaNueva = 0;
 
-    for (int filaVieja = 0; filaVieja < filas; filaVieja++)
-    {
-        if (filaVieja != posicion)
-        {
-            for (int columna = 0; columna < columnas; columna++)
-            {
+    for (int filaVieja = 0; filaVieja < filas; filaVieja++){
+        if (filaVieja != posicion){
+            for (int columna = 0; columna < columnas; columna++){
                 int indiceViejo = filaVieja * columnas + columna;
+
                 int ficha = obtenerFicha(datos, indiceViejo * 3);
 
                 int indiceNuevo = filaNueva * columnas + columna;
@@ -218,6 +209,124 @@ void eliminarFila(unsigned char*& datos, int& filas, int columnas, int posicion)
     datos = nuevosDatos;
 
     filas = nuevasFilas;
+
+    capacidadBytes = bytesReservados;
+}
+
+void agregarColumna(unsigned char*& datos, int filas, int& columnas,
+                    int posicion, int& capacidadBytes)
+{
+    int nuevasColumnas = columnas + 1;
+
+    int bitsNecesarios = filas * nuevasColumnas * 3;
+    int bytesNecesarios = (bitsNecesarios + 7) / 8;
+
+    unsigned char* nuevosDatos = new unsigned char[bytesNecesarios];
+
+    for (int i = 0; i < bytesNecesarios; i++)
+    {
+        nuevosDatos[i] = 0;
+    }
+
+    for (int fila = 0; fila < filas; fila++)
+    {
+        for (int columna = 0; columna < nuevasColumnas; columna++)
+        {
+            int indiceNuevo = fila * nuevasColumnas + columna;
+
+            if (columna == posicion)
+            {
+                int fichaNueva = indiceNuevo % 6;
+
+                ponerFicha(nuevosDatos, indiceNuevo * 3, fichaNueva);
+            }
+            else
+            {
+                int columnaVieja;
+
+                if (columna < posicion)
+                {
+                    columnaVieja = columna;
+                }
+                else
+                {
+                    columnaVieja = columna - 1;
+                }
+
+                int indiceViejo = fila * columnas + columnaVieja;
+
+                int ficha = obtenerFicha(datos, indiceViejo * 3);
+
+                ponerFicha(nuevosDatos, indiceNuevo * 3, ficha);
+            }
+        }
+    }
+
+    delete[] datos;
+
+    datos = nuevosDatos;
+
+    columnas = nuevasColumnas;
+
+    capacidadBytes = bytesNecesarios;
+}
+
+void eliminarColumna(unsigned char*& datos, int filas, int& columnas,
+                     int posicion, int& capacidadBytes)
+{
+    int nuevasColumnas = columnas - 1;
+
+    int bitsNecesarios = filas * nuevasColumnas * 3;
+    int bytesNecesarios = (bitsNecesarios + 7) / 8;
+
+    double ocupacion = (double)bytesNecesarios / capacidadBytes;
+
+    int bytesReservados;
+
+    if (ocupacion < 0.65)
+    {
+        bytesReservados = bytesNecesarios;
+    }
+    else
+    {
+        bytesReservados = capacidadBytes;
+    }
+
+    unsigned char* nuevosDatos = new unsigned char[bytesReservados];
+
+    for (int i = 0; i < bytesReservados; i++)
+    {
+        nuevosDatos[i] = 0;
+    }
+
+    for (int fila = 0; fila < filas; fila++)
+    {
+        int columnaNueva = 0;
+
+        for (int columnaVieja = 0; columnaVieja < columnas; columnaVieja++)
+        {
+            if (columnaVieja != posicion)
+            {
+                int indiceViejo = fila * columnas + columnaVieja;
+
+                int ficha = obtenerFicha(datos, indiceViejo * 3);
+
+                int indiceNuevo = fila * nuevasColumnas + columnaNueva;
+
+                ponerFicha(nuevosDatos, indiceNuevo * 3, ficha);
+
+                columnaNueva++;
+            }
+        }
+    }
+
+    delete[] datos;
+
+    datos = nuevosDatos;
+
+    columnas = nuevasColumnas;
+
+    capacidadBytes = bytesReservados;
 }
 
 void destruirTablero(unsigned char*& datos){
