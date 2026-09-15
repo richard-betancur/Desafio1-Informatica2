@@ -51,3 +51,25 @@ void ponerFicha(unsigned char* datos, int bitInicial, int ficha){
         datos[byte + 1] |= (ficha >> 1);
     }
 }
+
+void marcarPosicion(unsigned char* marcas, int indice)
+{
+    int byte = indice / 8;
+    int bit = indice % 8;
+
+    marcas[byte] |= (1 << bit);
+}
+
+bool estaMarcada(unsigned char* marcas, int indice)
+{
+    int byte = indice / 8;
+    int bit = indice % 8;
+
+    return (marcas[byte] & (1 << bit)) != 0;
+}
+
+
+
+
+
+

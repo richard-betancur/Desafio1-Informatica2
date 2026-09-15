@@ -6,6 +6,9 @@
 int obtenerFicha(unsigned char* datos, int bitInicial); ///unsigned char* es un puntero a nuestra memoria dinamica
 void ponerFicha(unsigned char* datos, int bitInicial, int ficha);
 
+void marcarPosicion(unsigned char* marcas, int indice);
+bool estaMarcada(unsigned char* marcas, int indice);
+
 #endif
 
 /// * es una direccion que apunta a una zona de memoria donde tenemos bytes

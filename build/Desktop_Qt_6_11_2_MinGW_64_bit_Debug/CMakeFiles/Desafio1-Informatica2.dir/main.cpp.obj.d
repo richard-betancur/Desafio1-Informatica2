@@ -143,4 +143,5 @@ CMakeFiles/Desafio1-Informatica2.dir/main.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
  C:\Users\user\OneDrive\Documentos\Desafio1-Informatica2\bits.h \
- C:\Users\user\OneDrive\Documentos\Desafio1-Informatica2\tablero.h
+ C:\Users\user\OneDrive\Documentos\Desafio1-Informatica2\tablero.h \
+ C:\Users\user\OneDrive\Documentos\Desafio1-Informatica2\combinaciones.h

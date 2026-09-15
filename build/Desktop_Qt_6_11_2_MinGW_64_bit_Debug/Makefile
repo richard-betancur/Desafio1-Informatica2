@@ -197,6 +197,30 @@ bits.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Desafio1-Informatica2.dir\build.make CMakeFiles/Desafio1-Informatica2.dir/bits.cpp.s
 .PHONY : bits.cpp.s
 
+combinaciones.obj: combinaciones.cpp.obj
+.PHONY : combinaciones.obj
+
+# target to build an object file
+combinaciones.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Desafio1-Informatica2.dir\build.make CMakeFiles/Desafio1-Informatica2.dir/combinaciones.cpp.obj
+.PHONY : combinaciones.cpp.obj
+
+combinaciones.i: combinaciones.cpp.i
+.PHONY : combinaciones.i
+
+# target to preprocess a source file
+combinaciones.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Desafio1-Informatica2.dir\build.make CMakeFiles/Desafio1-Informatica2.dir/combinaciones.cpp.i
+.PHONY : combinaciones.cpp.i
+
+combinaciones.s: combinaciones.cpp.s
+.PHONY : combinaciones.s
+
+# target to generate assembly for a file
+combinaciones.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Desafio1-Informatica2.dir\build.make CMakeFiles/Desafio1-Informatica2.dir/combinaciones.cpp.s
+.PHONY : combinaciones.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -261,6 +285,9 @@ help:
 	@echo ... bits.obj
 	@echo ... bits.i
 	@echo ... bits.s
+	@echo ... combinaciones.obj
+	@echo ... combinaciones.i
+	@echo ... combinaciones.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

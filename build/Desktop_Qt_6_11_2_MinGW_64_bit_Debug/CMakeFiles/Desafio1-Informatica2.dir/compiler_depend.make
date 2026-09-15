@@ -4,6 +4,10 @@
 CMakeFiles/Desafio1-Informatica2.dir/bits.cpp.obj: C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/bits.cpp \
   C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/bits.h
 
+CMakeFiles/Desafio1-Informatica2.dir/combinaciones.cpp.obj: C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/combinaciones.cpp \
+  C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/bits.h \
+  C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/combinaciones.h
+
 CMakeFiles/Desafio1-Informatica2.dir/main.cpp.obj: C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/main.cpp \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward/binders.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bit \
@@ -148,6 +152,7 @@ CMakeFiles/Desafio1-Informatica2.dir/main.cpp.obj: C:/Users/user/OneDrive/Docume
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h \
   C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/bits.h \
+  C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/combinaciones.h \
   C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/tablero.h
 
 CMakeFiles/Desafio1-Informatica2.dir/tablero.cpp.obj: C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/tablero.cpp \
@@ -297,13 +302,9 @@ CMakeFiles/Desafio1-Informatica2.dir/tablero.cpp.obj: C:/Users/user/OneDrive/Doc
   C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/tablero.h
 
 
-C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/nested_exception.h:
-
-C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/allocator.h:
+C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/combinaciones.cpp:
 
 C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/bits.cpp:
-
-C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_ios.h:
 
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bit:
 
@@ -319,6 +320,8 @@ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/rang
 
 C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/main.cpp:
 
+C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/combinaciones.h:
+
 C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/bits.h:
 
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/concept_check.h:
@@ -329,11 +332,13 @@ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cwchar:
 
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/alloc_traits.h:
 
+C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/nested_exception.h:
+
+C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/allocator.h:
+
+C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_ios.h:
+
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_ios.tcc:
-
-C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/debug/assertions.h:
-
-C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstddef:
 
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_string.h:
 
@@ -438,6 +443,10 @@ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stri
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stringfwd.h:
 
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cctype:
+
+C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/debug/assertions.h:
+
+C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstddef:
 
 C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/sec_api/wchar_s.h:
 

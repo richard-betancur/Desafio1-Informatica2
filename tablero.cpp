@@ -33,29 +33,26 @@ void mostrarTablero(unsigned char* datos, int filas, int columnas)
 
             int ficha = obtenerFicha(datos, bitInicial);
 
-            if (ficha == 0)
-            {
+            if (ficha == 0){
                 cout << "A ";
             }
-            else if (ficha == 1)
-            {
+            else if (ficha == 1){
                 cout << "B ";
             }
-            else if (ficha == 2)
-            {
+            else if (ficha == 2){
                 cout << "C ";
             }
-            else if (ficha == 3)
-            {
+            else if (ficha == 3){
                 cout << "D ";
             }
-            else if (ficha == 4)
-            {
+            else if (ficha == 4){
                 cout << "E ";
             }
-            else if (ficha == 5)
-            {
+            else if (ficha == 5){
                 cout << "F ";
+            }
+            else if (ficha == 6){
+                cout << "_ ";
             }
         }
 
@@ -63,8 +60,37 @@ void mostrarTablero(unsigned char* datos, int filas, int columnas)
     }
 }
 
+int obtenerFichaTablero(unsigned char* datos, int filas, int columnas, int fila, int columna)
+{
+    int indice = fila * columnas + columna;
+    int bitInicial = indice * 3;
+
+    return obtenerFicha(datos, bitInicial);
+}
+
+void eliminarFicha(unsigned char* datos, int filas, int columnas, int fila, int columna)
+{
+    int indice = fila * columnas + columna;
+    int bitInicial = indice * 3;
+
+    ponerFicha(datos, bitInicial, 6);
+}
+
 void destruirTablero(unsigned char*& datos){
 
     delete[] datos;
     datos = nullptr;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
