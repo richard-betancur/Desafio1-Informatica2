@@ -76,6 +76,25 @@ void limpiarMarcas(unsigned char* marcas, int bytesMarcas)
     }
 }
 
+void redimensionarMarcas(unsigned char*& marcas,
+                         int posiciones,
+                         int& bytesMarcas)
+{
+    int nuevosBytes = (posiciones + 7) / 8;
+
+    unsigned char* nuevasMarcas = new unsigned char[nuevosBytes];
+
+    for (int i = 0; i < nuevosBytes; i++)
+    {
+        nuevasMarcas[i] = 0;
+    }
+
+    delete[] marcas;
+
+    marcas = nuevasMarcas;
+    bytesMarcas = nuevosBytes;
+}
+
 
 
 

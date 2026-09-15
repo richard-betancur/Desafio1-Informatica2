@@ -11,6 +11,10 @@ bool estaMarcada(unsigned char* marcas, int indice);
 
 void limpiarMarcas(unsigned char* marcas, int bytesMarcas);
 
+void redimensionarMarcas(unsigned char*& marcas,
+                         int posiciones,
+                         int& bytesMarcas);
+
 #endif
 
 /// * es una direccion que apunta a una zona de memoria donde tenemos bytes
