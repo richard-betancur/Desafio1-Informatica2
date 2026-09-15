@@ -76,6 +76,48 @@ void eliminarFicha(unsigned char* datos, int filas, int columnas, int fila, int 
     ponerFicha(datos, bitInicial, 6);
 }
 
+void aplicarGravedad(unsigned char* datos, int filas, int columnas){
+    for (int columna = 0; columna < columnas; columna++){
+        int filaDestino = filas - 1;
+
+        for (int filaBuscar = filas - 1; filaBuscar >= 0; filaBuscar--){
+            int indiceBuscar = filaBuscar * columnas + columna;
+            int ficha = obtenerFicha(datos, indiceBuscar * 3);
+
+            if (ficha != 6){
+                int indiceDestino = filaDestino * columnas + columna;
+
+                ponerFicha(datos, indiceDestino * 3, ficha);
+
+                filaDestino--;
+            }
+        }
+
+        while (filaDestino >= 0){
+            int indice = filaDestino * columnas + columna;
+
+            ponerFicha(datos, indice * 3, 6);
+
+            filaDestino--;
+        }
+    }
+}
+
+void rellenarVacios(unsigned char* datos, int filas, int columnas)
+{
+    for (int i = 0; i < filas * columnas; i++)
+    {
+        int ficha = obtenerFicha(datos, i * 3);
+
+        if (ficha == 6)
+        {
+            int nuevaFicha = i % 6;
+
+            ponerFicha(datos, i * 3, nuevaFicha);
+        }
+    }
+}
+
 void destruirTablero(unsigned char*& datos){
 
     delete[] datos;

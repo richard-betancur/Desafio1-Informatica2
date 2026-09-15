@@ -20,34 +20,24 @@ int main()
 
     crearTablero(datos, filas, columnas);
 
-    ponerFicha(datos, 0 * 3, 2);
-    ponerFicha(datos, 5 * 3, 2);
-    ponerFicha(datos, 10 * 3, 2);
+    // Creamos un espacio vacio en medio del tablero
+    ponerFicha(datos, 5 * 3, 6);
 
     cout << endl;
+    cout << "Tablero antes de la gravedad:" << endl;
     mostrarTablero(datos, filas, columnas);
 
-    int bytesMarcas = (filas * columnas + 7) / 8;
-
-    unsigned char* marcas = new unsigned char[bytesMarcas];
-
-    for (int i = 0; i < bytesMarcas; i++){
-        marcas[i] = 0;
-    }
-
-    detectarCombinaciones(datos, filas, columnas, marcas);
-    eliminarMarcadas(datos, filas, columnas, marcas);
+    aplicarGravedad(datos, filas, columnas);
 
     cout << endl;
+    cout << "Tablero despues de la gravedad:" << endl;
     mostrarTablero(datos, filas, columnas);
 
+    rellenarVacios(datos, filas, columnas);
+
     cout << endl;
-
-    for (int i = 0; i < filas * columnas; i++){
-        cout << "Posicion " << i << ": " << estaMarcada(marcas, i) << endl;
-    }
-
-    delete[] marcas;
+    cout << "Tablero despues de rellenar:" << endl;
+    mostrarTablero(datos, filas, columnas);
 
     destruirTablero(datos);
 
