@@ -1,9 +1,12 @@
-#ifndef BITS_H   /// se usa para que BITS_H no se incluya varias veces accidentalmente
-#define BITS_H   /// se usa para que BITS_H no se incluya varias veces accidentalmente
+/// ARCHIVO DE ENCABEZADO DEL MODULO DE BITS
+
+#ifndef BITS_H
+#define BITS_H
 
 
-///Declaramos una Funcion obtenerFicha que resivira datos y bitInicial y devolvera un entero
-int obtenerFicha(unsigned char* datos, int bitInicial); ///unsigned char* es un puntero a nuestra memoria dinamica
+/// Existen funciones llamada... que resive estos datos y devuelve un... void no devuelve nada.
+
+int obtenerFicha(unsigned char* datos, int bitInicial);  /// unsigned char* datos es un puntero a la memoria donde tenemos guardado el tablero
 void ponerFicha(unsigned char* datos, int bitInicial, int ficha);
 
 void marcarPosicion(unsigned char* marcas, int indice);
@@ -11,10 +14,8 @@ bool estaMarcada(unsigned char* marcas, int indice);
 
 void limpiarMarcas(unsigned char* marcas, int bytesMarcas);
 
-void redimensionarMarcas(unsigned char*& marcas,
-                         int posiciones,
-                         int& bytesMarcas);
+void redimensionarMarcas(unsigned char*& marcas, int posiciones, int& bytesMarcas);
 
 #endif
 
-/// * es una direccion que apunta a una zona de memoria donde tenemos bytes
+/// Implementacion real en bits.cpp

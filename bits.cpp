@@ -1,12 +1,10 @@
 #include "bits.h"
 
-int obtenerFicha(unsigned char* datos, int bitInicial)
-{
-    int byte = bitInicial / 8;
-    int offset = bitInicial % 8;
+int obtenerFicha(unsigned char* datos, int bitInicial){                                      ///Resive la memoria donde esta guardado el tablero y la posicion del primer bite de una ficha
+    int byte = bitInicial / 8; ///dividimos entre 8 porque 1 byte = 8 bits                      y devuelve el numero de esa ficha (0-7)
+    int offset = bitInicial % 8; ///
 
-    if (offset <= 5)
-    {
+    if (offset <= 5){
         int ficha = (datos[byte] >> offset) & 7;
 
         return ficha;
@@ -28,6 +26,10 @@ int obtenerFicha(unsigned char* datos, int bitInicial)
         return ficha;
     }
 }
+
+
+
+
 
 void ponerFicha(unsigned char* datos, int bitInicial, int ficha){
     int byte = bitInicial / 8;
@@ -52,40 +54,45 @@ void ponerFicha(unsigned char* datos, int bitInicial, int ficha){
     }
 }
 
-void marcarPosicion(unsigned char* marcas, int indice)
-{
+
+
+
+
+void marcarPosicion(unsigned char* marcas, int indice){
     int byte = indice / 8;
     int bit = indice % 8;
 
     marcas[byte] |= (1 << bit);
 }
 
-bool estaMarcada(unsigned char* marcas, int indice)
-{
+
+
+bool estaMarcada(unsigned char* marcas, int indice){
     int byte = indice / 8;
     int bit = indice % 8;
 
     return (marcas[byte] & (1 << bit)) != 0;
 }
 
-void limpiarMarcas(unsigned char* marcas, int bytesMarcas)
-{
+
+
+void limpiarMarcas(unsigned char* marcas, int bytesMarcas){
     for (int i = 0; i < bytesMarcas; i++)
     {
         marcas[i] = 0;
     }
 }
 
-void redimensionarMarcas(unsigned char*& marcas,
-                         int posiciones,
-                         int& bytesMarcas)
-{
+
+
+
+
+void redimensionarMarcas(unsigned char*& marcas, int posiciones, int& bytesMarcas){
     int nuevosBytes = (posiciones + 7) / 8;
 
     unsigned char* nuevasMarcas = new unsigned char[nuevosBytes];
 
-    for (int i = 0; i < nuevosBytes; i++)
-    {
+    for (int i = 0; i < nuevosBytes; i++){
         nuevasMarcas[i] = 0;
     }
 
