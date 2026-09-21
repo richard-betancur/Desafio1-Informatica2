@@ -5,9 +5,9 @@ int obtenerFicha(unsigned char* datos, int bitInicial){                         
     int offset = bitInicial % 8; ///
 
     if (offset <= 5){
-        int ficha = (datos[byte] >> offset) & 7;
+        int ficha = (datos[byte] >> offset) & 7; //Desplaza la ficha a la derecha y quedate solo con 3 bits
 
-        return ficha;
+        return ficha; //Devolvemos el numero
     }
     else if (offset == 6){
         int parte1 = (datos[byte] >> 6) & 3;
@@ -96,8 +96,8 @@ void redimensionarMarcas(unsigned char*& marcas, int posiciones, int& bytesMarca
         nuevasMarcas[i] = 0;
     }
 
-    delete[] marcas;
 
+    delete[] marcas;
     marcas = nuevasMarcas;
     bytesMarcas = nuevosBytes;
 }

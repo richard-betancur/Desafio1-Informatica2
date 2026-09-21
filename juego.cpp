@@ -7,6 +7,50 @@ void eliminarFichaJugador(unsigned char* datos, int filas, int columnas,int fila
     eliminarFicha(datos, filas, columnas, fila, columna);
 }
 
+
+int procesarCascadas(unsigned char* datos, int filas, int columnas,
+                     unsigned char* marcas, int bytesMarcas,
+                     int& cantidadCombinaciones,
+                     int& cantidadFichasEliminadas){
+
+    int cantidadCascadas = 0;
+
+    cantidadCombinaciones = 0;
+    cantidadFichasEliminadas = 0;
+
+    // La ficha eliminada por el jugador ya dejó un vacío.
+    // Primero hacemos caer las fichas y rellenamos.
+    aplicarGravedad(datos, filas, columnas);
+    rellenarVacios(datos, filas, columnas);
+    limpiarMarcas(marcas, bytesMarcas);
+
+    int combinacionesEncontradas = 0;
+    int cantidad = detectarCombinaciones(datos, filas, columnas, marcas, combinacionesEncontradas);
+
+    while (cantidad > 0){
+        // Esta combinación ES una cascada
+        cantidadCascadas++;
+
+        cantidadFichasEliminadas += cantidad;
+        cantidadCombinaciones += combinacionesEncontradas;
+
+        eliminarMarcadas(datos, filas, columnas, marcas);// Eliminamos las combinaciones encontradas
+        aplicarGravedad(datos, filas, columnas);// Las fichas caen
+        rellenarVacios(datos, filas, columnas);// Se generan fichas nuevas
+        limpiarMarcas(marcas, bytesMarcas);// Preparamos la siguiente búsqueda
+
+        combinacionesEncontradas = 0;
+        // Buscamos si la nueva caída produjo otra combinación
+        cantidad = detectarCombinaciones(datos, filas, columnas, marcas, combinacionesEncontradas);
+    }
+
+    return cantidadCascadas;
+}
+
+
+
+
+/*
 int procesarCascadas(unsigned char* datos, int filas, int columnas,
                      unsigned char* marcas, int bytesMarcas,
                      int& cantidadCombinaciones,
@@ -49,3 +93,4 @@ int procesarCascadas(unsigned char* datos, int filas, int columnas,
 
     return cantidadCascadas;
 }
+*/

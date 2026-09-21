@@ -1,7 +1,6 @@
 #include <iostream>
 #include "bits.h"
 #include "tablero.h"
-#include "combinaciones.h"
 #include "juego.h"
 
 using namespace std;

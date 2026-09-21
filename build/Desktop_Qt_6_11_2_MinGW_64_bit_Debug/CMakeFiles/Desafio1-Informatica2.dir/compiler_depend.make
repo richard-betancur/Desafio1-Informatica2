@@ -158,7 +158,6 @@ CMakeFiles/Desafio1-Informatica2.dir/main.cpp.obj: C:/Users/user/OneDrive/Docume
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h \
   C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/bits.h \
-  C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/combinaciones.h \
   C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/juego.h \
   C:/Users/user/OneDrive/Documentos/Desafio1-Informatica2/tablero.h
 
